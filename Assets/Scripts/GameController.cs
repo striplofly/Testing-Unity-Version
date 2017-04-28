@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour {
     // a list that will store the sticks image for the game
     public List<Sprite> gameSticks;
 
-	public TestScript2 scriptRef;
+	public TestScript3 scriptRef;
 
     private bool firstGuess, secondGuess;
 
@@ -64,16 +64,16 @@ public class GameController : MonoBehaviour {
         // need to do it this way because we created the button upon start
         foreach(Button btn in btns)
         {
-            btn.onClick.AddListener(() => PickAPuzzle());
+            btn.onClick.AddListener(() => PickAPuzzle()); 
         }
     }
 
     void PickAPuzzle()
     {
         string name = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
+
         // prompt us when we clicking a button in the scene
         Debug.Log("You are clicking a puzzle button " + name);
-
 
         if (!firstGuess)
         {
