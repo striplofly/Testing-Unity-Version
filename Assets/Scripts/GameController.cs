@@ -18,6 +18,8 @@ public class GameController : MonoBehaviour {
     // a list that will store the sticks image for the game
     public List<Sprite> gameSticks;
 
+	public TestScript3 scriptRef;
+
     private bool firstGuess, secondGuess;
 
     private int countGuesses, countCorrectGuesses, gameGuesses;
@@ -75,6 +77,7 @@ public class GameController : MonoBehaviour {
 
         if (!firstGuess)
         {
+			scriptRef.One ();
             firstGuess = true;
 
             firstGuessIndex = int.Parse(name);
@@ -86,6 +89,7 @@ public class GameController : MonoBehaviour {
 
         else if (!secondGuess)
         {
+			scriptRef.One ();
             secondGuess = true;
 
             secondGuessIndex = int.Parse(name);
